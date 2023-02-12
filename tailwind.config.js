@@ -15,6 +15,10 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-roboto)', ...fontFamily.sans],
       },
+      maxWidth:{
+        '40px':'40px',
+        '60px':'60px'
+      }
     },
   },
   plugins: [],
