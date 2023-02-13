@@ -1,14 +1,19 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-//import Image from 'next/image'
+import Image from 'next/image'
 import { Roboto } from '@next/font/google'
-
+import { BsCardList, BsFillChatDotsFill, BsFillCartFill, BsFillPersonFill } from "react-icons/bs";
+import { AiOutlineMenu, AiFillVideoCamera } from "react-icons/ai";
+import { MdSell, MdNewReleases, MdWhatshot } from "react-icons/md";
+import SearchHistory from '@/components/SearchHistory';
+import StickySearch from '@/components/StickSearch';
+import pictureTest from '@/public/test.webp'
+import iconHome from '@/public/nomi.png'
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400', '700'],
   variable: '--font-roboto',
 })
-
 
 const Home: NextPage = () => {
   return (
@@ -20,24 +25,90 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${roboto.variable} font-sans`}>
-        <div className="">
-          <div className="">
-            <div className="border-2 border-solid border-red-400 rounded-lg mt-6 flex flex-shrink-0 justify-center items-center h-11 max-w-full">
-              <span className="flex-1 px-2 max-w-40px relative float-right">icon</span>
-              <input className="flex-1  px-2 relative w-full block whitespace-pre-wrap" placeholder='Tìm theo tên sản phẩm'></input>
-              <button className="flex-1 relative max-w-60px float-left text-red-600">Tìm</button>
-            </div>
-            <div className="flex flex-row space-x-1 text-sm flex-nowrap overscroll-x-auto h-6">
-              <span className="broder-0 rounded-3xl bg-gray-500 p-2 w-full ">Áo Nữ</span>
-              <span className="broder-0 rounded-3xl bg-gray-500 p-2 w-full">Thời trang nam nữ</span>
-              <span className="broder-0 rounded-3xl bg-gray-500 p-2 w-full">ốp điện thoại</span>
-              <span className="broder-0 rounded-3xl bg-gray-500 p-2 w-full">Quần áo trẻ em</span>
-              <span className="broder-0 rounded-3xl bg-gray-500 p-2 w-full">Quần áo trẻ em</span>
-              <span className="broder-0 rounded-3xl bg-gray-500 p-2 w-full">Quần áo trẻ em</span>
-              <span className="broder-0 rounded-3xl bg-gray-500 p-2 w-full">Quần áo trẻ em</span>
-            </div>
+
+
+        {/* Search Top Sticky*/}
+        <StickySearch />
+        {/* History Search */}
+        <SearchHistory />
+        {/* Menu */}
+        <div className="flex flex-row text-center pt-2 h-20 mx-2.5">
+          <div className="flex-1 ">
+            <div className="flex items-center justify-center "><AiOutlineMenu className="w-12 h-12" /></div>
+            <span>Danh Mục</span>
+          </div>
+          <div className="flex-1">
+            <div className="flex items-center justify-center "><MdSell className="w-12 h-12" /></div>
+            <span>Sale</span>
+          </div>
+          <div className="flex-1">
+            <div className="flex items-center justify-center "><MdNewReleases className="w-12 h-12" /></div>
+            <span>SP Mới</span>
+          </div>
+          <div className="flex-1">
+            <div className="flex items-center justify-center "><MdWhatshot className="w-12 h-12" /></div>
+            <span>SP Hot</span>
+          </div>
+          <div className="flex-1">
+            <div className="flex items-center justify-center "><BsCardList className="w-12 h-12" /></div>
+            <span>Phân Loại</span>
           </div>
         </div>
+        {/* Show Products */}
+        <div className="grid grid-cols-2 gap-2 items-center text-sm justify-center pt-2 mx-2.5">
+          {(() => {
+            const Products = [];
+
+            for (let i = 2017; i <= 2050; i++) {
+              Products.push(
+                <div>
+                  <div className="flex flex-col relative w-46vw h-46vw rounded-lg">
+                    <Image className="rounded-t-lg"
+                      src={pictureTest}
+                      alt="Picture of the author"
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="flex flex-col bg-white rounded-b-lg p-2">
+                    <span className="text-center">Bịch kẹo dẻo</span>
+                    <span className="text-red-700 ">7 Ngày Nhận hàng</span>
+                    <span className="text-red-700 font-bold">1.000.000 đồng</span>
+                    <span className="text-gay-400">Đã bán 640</span>
+                  </div>
+                </div>
+              );
+            }
+            return Products;
+          })()}
+        </div>
+        {/* Menu Bottom Stick*/}
+        <div className="fixed flex flex-row bottom-0 left-0 z-10 space-x-1 text-center justify-center bg-white min-w-full px-2 pt-1 h-16 text-sm">
+          <div className="w-1/4">
+            <Image className="ml-auto mr-auto"
+              src={iconHome}
+              alt="Home"
+            />
+          </div>
+          <div className="w-1/4">
+            <div className="flex items-center justify-center "><AiFillVideoCamera className="w-6 h-6" /></div>
+            <span>Videos SP</span>
+          </div>
+          <div className="w-1/4">
+            <div className="flex items-center justify-center "><BsFillChatDotsFill className="w-6 h-6" /></div>
+            <span>Nhắn Tin</span>
+          </div>
+          <div className="w-1/4">
+            <div className="flex items-center justify-center "><BsFillCartFill className="w-6 h-6" /></div>
+            <span>Giỏ Hàng</span>
+          </div>
+          <div className="w-1/4">
+            <div className="flex items-center justify-center "><BsFillPersonFill className="w-6 h-6" /></div>
+            <span>Cá Nhân</span>
+          </div>
+        </div>
+
+
       </main>
     </>
   )
