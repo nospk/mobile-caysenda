@@ -4,7 +4,7 @@ const SearchHistory: NextPage = () => {
     const [textInputs, setTextInputs] = useState(['Áo Nữ', 'Thời trang nam nữ', 'ốp điện thoại', 'Quần áo trẻ em'])
     return (
         <div className="flex flex-row space-x-1 text-xs flex-nowrap overflow-x-scroll scrollbar-hide h-8 items-center pt-1 mx-2.5">
-            {textInputs.map(textInput => <span key={textInput} className="flex-none broder-0 rounded-3xl bg-gray-200 p-1">{textInput}</span>     
+            {textInputs.map(textInput => <span key={textInput} className="flex-none broder-0 rounded-3xl bg-[#f2f2f2] p-1 text-[#606060] ">{textInput}</span>     
             )}
         </div>
     )

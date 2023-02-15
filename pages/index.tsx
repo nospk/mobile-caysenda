@@ -2,13 +2,19 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Roboto } from '@next/font/google'
-import { BsCardList, BsFillChatDotsFill, BsFillCartFill, BsFillPersonFill } from "react-icons/bs";
-import { AiOutlineMenu, AiFillVideoCamera } from "react-icons/ai";
-import { MdSell, MdNewReleases, MdWhatshot } from "react-icons/md";
 import SearchHistory from '@/components/SearchHistory';
 import StickySearch from '@/components/StickSearch';
 import pictureTest from '@/public/test.webp'
-import iconHome from '@/public/nomi.png'
+import iconHome from '@/public/icon-nomi.png'
+import inconPerson from '@/public/icon-ca-nhan.png'
+import inconCamera from '@/public/icon-camera.png'
+import inconMenu from '@/public/icon-danh-muc.png'
+import inconCart from '@/public/icon-gio-hang.png'
+import inconChoice from '@/public/icon-phan-loai.png'
+import inconSale from '@/public/icon-sale.png'
+import inconProductNews from '@/public/icon-san-pham-moi.png'
+import iconProductHot from '@/public/icon-san-pham-hot.png'
+import iconMessage from '@/public/icon-tin-nhan.png'
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400', '700'],
@@ -32,25 +38,50 @@ const Home: NextPage = () => {
         {/* History Search */}
         <SearchHistory />
         {/* Menu */}
-        <div className="flex flex-row text-center pt-2 h-20 mx-2.5">
+        <div className="flex flex-row text-center pt-2 h-26 mx-2.5 text-[#606060]">
           <div className="flex-1 ">
-            <div className="flex items-center justify-center "><AiOutlineMenu className="w-12 h-12" /></div>
+            <div className="flex items-center justify-center "><Image className="ml-auto mr-auto"
+              src={inconMenu}
+              alt="Home"
+              width={50}
+              height={50}
+            /></div>
             <span>Danh Mục</span>
           </div>
           <div className="flex-1">
-            <div className="flex items-center justify-center "><MdSell className="w-12 h-12" /></div>
+            <div className="flex items-center justify-center "><Image className="ml-auto mr-auto"
+              src={inconSale}
+              alt="Sale"
+              width={50}
+              height={50}
+            /></div>
             <span>Sale</span>
           </div>
           <div className="flex-1">
-            <div className="flex items-center justify-center "><MdNewReleases className="w-12 h-12" /></div>
+            <div className="flex items-center justify-center "><Image className="ml-auto mr-auto"
+              src={inconProductNews}
+              alt="News"
+              width={50}
+              height={50}
+            /></div>
             <span>SP Mới</span>
           </div>
           <div className="flex-1">
-            <div className="flex items-center justify-center "><MdWhatshot className="w-12 h-12" /></div>
+            <div className="flex items-center justify-center "><Image className="ml-auto mr-auto"
+              src={iconProductHot}
+              alt="Hot"
+              width={50}
+              height={50}
+            /></div>
             <span>SP Hot</span>
           </div>
           <div className="flex-1">
-            <div className="flex items-center justify-center "><BsCardList className="w-12 h-12" /></div>
+            <div className="flex items-center justify-center "><Image className="ml-auto mr-auto"
+              src={inconChoice}
+              alt="Choice"
+              width={50}
+              height={50}
+            /></div>
             <span>Phân Loại</span>
           </div>
         </div>
@@ -59,10 +90,10 @@ const Home: NextPage = () => {
           {(() => {
             const Products = [];
 
-            for (let i = 2017; i <= 2050; i++) {
+            for (let i = 0; i <= 20; i++) {
               Products.push(
-                <div>
-                  <div className="flex flex-col relative w-46vw h-46vw rounded-lg">
+                <div className="flex flex-col p-1">
+                  <div className="relative w-100 h-80 rounded-lg">
                     <Image className="rounded-t-lg"
                       src={pictureTest}
                       alt="Picture of the author"
@@ -71,10 +102,13 @@ const Home: NextPage = () => {
                     />
                   </div>
                   <div className="flex flex-col bg-white rounded-b-lg p-2">
-                    <span className="text-center">Bịch kẹo dẻo</span>
-                    <span className="text-red-700 ">7 Ngày Nhận hàng</span>
-                    <span className="text-red-700 font-bold">1.000.000 đồng</span>
-                    <span className="text-gay-400">Đã bán 640</span>
+                    <span className="text-lg">Bịch kẹo dẻo</span>
+                    <span className="text-red-700 text-2xl font-bold">1,000,000đ</span>
+                    <div className="pt-2">
+                      <span className="text-gay-400 float-left">Đã bán:</span>
+                      <span className="text-gay-400 float-right">600</span>
+                    </div>
+                    <button className="border-2 h-8 rounded-lg text-[#f66d09] border-orange-200">Thêm Giỏ Hàng</button>
                   </div>
                 </div>
               );
@@ -83,27 +117,49 @@ const Home: NextPage = () => {
           })()}
         </div>
         {/* Menu Bottom Stick*/}
-        <div className="fixed flex flex-row bottom-0 left-0 z-10 space-x-1 text-center justify-center bg-white min-w-full px-2 pt-1 h-16 text-sm">
+        <div className="fixed flex flex-row bottom-0 left-0 z-10 space-x-1 text-center justify-center text-[#2a201e] bg-white bg-opacity-96 min-w-full px-2 pt-2 h-13 text-sm">
           <div className="w-1/4">
             <Image className="ml-auto mr-auto"
               src={iconHome}
               alt="Home"
+              width={40}
+              height={40}
             />
           </div>
           <div className="w-1/4">
-            <div className="flex items-center justify-center "><AiFillVideoCamera className="w-6 h-6" /></div>
+            <Image className="ml-auto mr-auto"
+              src={inconCamera}
+              alt="Camera"
+              width={25}
+              height={25}
+            />
             <span>Videos SP</span>
           </div>
           <div className="w-1/4">
-            <div className="flex items-center justify-center "><BsFillChatDotsFill className="w-6 h-6" /></div>
+            <Image className="ml-auto mr-auto"
+              src={iconMessage}
+              alt="Message"
+              width={25}
+              height={25}
+            />
             <span>Nhắn Tin</span>
           </div>
           <div className="w-1/4">
-            <div className="flex items-center justify-center "><BsFillCartFill className="w-6 h-6" /></div>
+            <Image className="ml-auto mr-auto"
+              src={inconCart}
+              alt="Cart"
+              width={25}
+              height={25}
+            />
             <span>Giỏ Hàng</span>
           </div>
           <div className="w-1/4">
-            <div className="flex items-center justify-center "><BsFillPersonFill className="w-6 h-6" /></div>
+            <Image className="ml-auto mr-auto"
+              src={inconPerson}
+              alt="Account"
+              width={25}
+              height={25}
+            />
             <span>Cá Nhân</span>
           </div>
         </div>
