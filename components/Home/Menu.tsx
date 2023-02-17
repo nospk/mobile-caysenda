@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import Image from 'next/image';
 import iconMenu from '@/public/iconMenu.png'
 import iconChoice from '@/public/iconChoice.png'

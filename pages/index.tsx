@@ -15,7 +15,7 @@ const Home: NextPage = () => {
     <>
       <HeadPage title="Trang chủ - Cây Sen Đá" />
       {/* Search Top Sticky*/}
-      <StickySearch />
+      <StickySearch product="" />
       {/* History Search */}
       <SearchHistory />
       {/* Menu */}

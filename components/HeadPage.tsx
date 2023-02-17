@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import type { FC } from 'react';
-interface head {
+interface Header {
     title: string;
 
 }
-const HeadPage: FC<head> = (props: head) => {
+const HeadPage: FC<Header> = (props) => {
     return (
         <>
             <Head>

@@ -19,6 +19,12 @@ module.exports = {
         '40px':'40px',
         '60px':'60px'
       },
+      width:{
+        '46vw':'46.4vw'
+      },
+      height:{
+        '46vw':'46.4vw'
+      }
     },
   },
   plugins: [
