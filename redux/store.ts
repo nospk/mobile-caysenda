@@ -2,10 +2,10 @@
 import { configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { AnyAction, Action, combineReducers } from 'redux';
 import { createWrapper, Context, HYDRATE } from 'next-redux-wrapper';
-import keyword from './keyWordSearch';
+import { keyWordSearch } from '@/redux/keyWordSearch/reducer';
 
 const reducer = combineReducers({
-    counter: keyword.reducer,
+    keywords: keyWordSearch,
 })
 // create your reducer
 // const reducer = (state: State = { tick: [] }, action: AnyAction) => {
@@ -22,6 +22,7 @@ const reducer = combineReducers({
 // };
 
 // create a makeStore function
+export type AppDispatch = ReturnType<typeof makeStore>['dispatch']
 export type AppStore = ReturnType<typeof makeStore>;
 export type AppState = ReturnType<AppStore['getState']>;
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, AppState, unknown, Action>;
