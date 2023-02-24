@@ -2,4 +2,10 @@ import { createAction } from '@reduxjs/toolkit';
 
 
 
-export const setKeyHome = createAction<string[] | undefined>('keyWordSearch/setKeyHome')
+export const setKeyWordHome = createAction('setKeyWordHome', (keyword: string[]) => {
+    return {
+        payload: {
+            keyword
+        }
+    }
+})
