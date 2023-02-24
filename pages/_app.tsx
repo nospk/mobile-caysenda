@@ -1,16 +1,31 @@
 import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
-import { Roboto } from '@next/font/google'
+import type { ReactElement, ReactNode } from 'react';
+import type { AppProps } from 'next/app';
+import { Roboto } from '@next/font/google';
 import { Provider } from 'react-redux';
 import { wrapper } from '@/redux/store';
+import type { NextPage } from 'next';
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
+
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400', '700'],
   variable: '--font-roboto',
 })
-export default function App({ Component, ...pageProps }: AppProps) {
+
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
+
+
+export default function App({ Component, ...pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page) => page)
   const { store, props } = wrapper.useWrappedStore(pageProps);
-  return (
+  return getLayout(
     <Provider store={store}>
       <main className={roboto.className}>
         <Component {...props} />
@@ -19,3 +34,5 @@ export default function App({ Component, ...pageProps }: AppProps) {
 
   )
 }
+
+

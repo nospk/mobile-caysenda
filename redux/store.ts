@@ -16,7 +16,7 @@ export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, AppState, unkn
 const makeStore = () =>
     configureStore({
         reducer: reducer,
-        devTools: true,
+        devTools: false,
     });
 // export an assembled wrapper
-export const wrapper = createWrapper<AppStore>(makeStore, { debug: true });
+export const wrapper = createWrapper<AppStore>(makeStore, { debug: false });

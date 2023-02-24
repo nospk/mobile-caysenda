@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import Image from 'next/image';
 import pictureTest from '@/public/test.webp';
+
 interface Product {
     name: string;
     price: number;
