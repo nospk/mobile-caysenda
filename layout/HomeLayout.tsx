@@ -1,14 +1,10 @@
 import HeadPage from '@/components/HeadPage';
-import SearchHistory from '@/components/Home/SearchHistory';
-import StickySearch from '@/components/Home/StickSearch';
-import FooterMenu from '@/components/Home/FooterMenu';
+import SearchHistory from '@/components/SearchHistory';
+import StickySearch from '@/components/StickSearch';
+import FooterMenu from '@/components/FooterMenu';
 import type { ReactNode } from 'react';
 
-type Props = {
-    children: ReactNode
-}
-
-const HomeLayout = ({ children }: Props) => {
+const HomeLayout = ({ children }: { children: ReactNode }) => {
     return (
         <>
             <HeadPage title="Trang chủ - Cây Sen Đá" />

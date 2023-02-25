@@ -1,9 +1,9 @@
 import type { NextPageWithLayout } from '@/pages/_app';
 import type { ReactElement } from 'react'
-import Layout from '@/layout/Home'
-import ProductCard from '@/components/Card/ProductCard';
-import Menu from '@/components/Home/Menu';
-
+import HomeLayout from '@/layout/HomeLayout'
+import ProductCard from '@/components/ProductCard';
+import HomeMenu from '@/components/HomeMenu';
+import styles from './index.module.css';
 
 
 const Home: NextPageWithLayout = () => {
@@ -11,9 +11,9 @@ const Home: NextPageWithLayout = () => {
   const list = products.map(product => <ProductCard key={product} name='Kẹo dẻo' price={100000} sold={300} image='' />)
   return (
     <>
-      <Menu />
+      <HomeMenu />
       {/* Show Products */}
-      <div className="grid grid-cols-2 gap-2 items-center text-sm justify-center pt-2 mx-2.5">
+      <div className={styles.products}>
         {list}
       </div>
     </>
@@ -21,9 +21,9 @@ const Home: NextPageWithLayout = () => {
 }
 Home.getLayout = function getLayout(page: ReactElement) {
   return (
-    <Layout>
+    <HomeLayout>
       {page}
-    </Layout>
+    </HomeLayout>
   )
 }
 export default Home
