@@ -23,5 +23,5 @@
 }
 
 .add_cart {
-    @apply border-2 h-8 rounded-lg text-[#f66d09] border-orange-200;
+    @apply border-2 h-8 rounded-lg text-red-700 border-red-200;
 }

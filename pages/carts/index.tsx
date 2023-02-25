@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
-import FooterMenu from '@/components/Home/FooterMenu'
+import Footer from '@/components/Footer'
 
 const Cart: NextPage = () => {
   return (
     <>
       <p>Cart</p>
-      <FooterMenu />
+      <Footer />
     </>
   )
 }

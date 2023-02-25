@@ -1,12 +1,10 @@
 import type { NextPage } from 'next'
-import FooterMenu from '@/components/Home/FooterMenu'
-import HeadPage from '@/components/HeadPage';
+import Footer from '@/components/Footer'
 const Account: NextPage = () => {
   return (
     <>
-      <HeadPage title='Sản Phẩm' />
       <p>Sản Phẩm</p>
-      <FooterMenu />
+      <Footer />
     </>
   )
 }

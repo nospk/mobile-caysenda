@@ -2,7 +2,7 @@ import type { NextPageWithLayout } from '@/pages/_app';
 import type { ReactElement } from 'react'
 import HomeLayout from '@/layout/HomeLayout'
 import ProductCard from '@/components/ProductCard';
-import HomeMenu from '@/components/HomeMenu';
+import Menu from '@/components/Menu';
 import styles from './index.module.css';
 
 
@@ -11,7 +11,7 @@ const Home: NextPageWithLayout = () => {
   const list = products.map(product => <ProductCard key={product} name='Kẹo dẻo' price={100000} sold={300} image='' />)
   return (
     <>
-      <HomeMenu />
+      <Menu />
       {/* Show Products */}
       <div className={styles.products}>
         {list}

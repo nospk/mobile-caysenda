@@ -1,6 +1,5 @@
-import StickySearch from '@/components/Home/StickSearch';
-import HeadPage from '@/components/HeadPage';
-import FooterMenu from '@/components/Home/FooterMenu';
+import StickySearch from '@/components/StickSearch';
+import Footer from '@/components/Footer';
 import { InferGetServerSidePropsType } from 'next';
 import { GetServerSideProps } from 'next';
 interface PageProps {
@@ -17,10 +16,9 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (context)
 const SearchPage = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     return (
         <>
-            <StickySearch product={props.product} />
-            <HeadPage title='Tìm kiếm' />
+            <StickySearch />
             <p>{props.product}</p>
-            <FooterMenu />
+            <Footer />
         </>
     )
 }

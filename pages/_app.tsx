@@ -13,7 +13,7 @@ type AppPropsWithLayout = AppProps & {
 
 const roboto = Roboto({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: '400',
   variable: '--font-roboto',
 })
 
@@ -25,10 +25,10 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 export default function App({ Component, ...pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page)
   const { store, props } = wrapper.useWrappedStore(pageProps);
-  return getLayout(
+  return (
     <Provider store={store}>
       <main className={roboto.className}>
-        <Component {...props} />
+        {getLayout(<Component {...props} />)}
       </main>
     </Provider>
 

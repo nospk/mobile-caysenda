@@ -4,7 +4,7 @@ interface Header {
     title: string;
 
 }
-const HeadPage: FC<Header> = (props) => {
+const HeadSeo: FC<Header> = (props) => {
     return (
         <>
             <Head>
@@ -18,4 +18,4 @@ const HeadPage: FC<Header> = (props) => {
     )
 
 }
-export default HeadPage
+export default HeadSeo
