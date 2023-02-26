@@ -1,11 +1,13 @@
 import type { FC } from "react";
 import styles from './Menu.module.css';
 import Icon from '@/components/Icon';
+import CategoryModal from '@/components/CategoryModal';
 const Menu: FC = () => {
     return (
         <>
+            <CategoryModal></CategoryModal>
             <div className={styles.menu}>
-                <div className={styles.menu_item}>
+                <div className={styles.menu_item} >
                     <div className={styles.menu_icon}>
                         <Icon src="/iconCategory.png" alt="category" width={50} height={50} />
                     </div>

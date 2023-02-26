@@ -13,25 +13,25 @@ const Footer: FC = () => {
                     </Link>
                 </div>
                 <div className="w-1/4">
-                    <Link href="/videos">
+                    <Link href="/video">
                         <Icon src="/iconPerson.png" alt="Camera" width={25} height={25} />
                         <span>Videos SP</span>
                     </Link>
                 </div>
                 <div className="w-1/4">
-                    <Link href="/chats">
+                    <Link href="/chat">
                         <Icon src="/iconChat.png" alt="Message" width={25} height={25} />
                         <span>Nhắn Tin</span>
                     </Link>
                 </div>
                 <div className="w-1/4">
-                    <Link href="/carts">
+                    <Link href="/cart">
                         <Icon src="/iconCart.png" alt="Cart" width={25} height={25} />
                         <span>Giỏ Hàng</span>
                     </Link>
                 </div>
                 <div className="w-1/4">
-                    <Link href="/accounts">
+                    <Link href="/account">
                         <Icon src="/iconPerson.png" alt="Account" width={25} height={25} />
                         <span>Cá Nhân</span>
                     </Link>
