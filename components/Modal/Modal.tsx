@@ -15,9 +15,9 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
     return (
         <>
             {isOpen && (
-                <div className={styles.modalOverlay} onClick={closeModal}>
+                <div className={styles.modalOverlay} onDrag={closeModal} onClick={closeModal}>
                     <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-                        <div className={styles.modalContent}>{children}</div>
+                        <div>{children}</div>
                     </div>
                 </div>
             )}
