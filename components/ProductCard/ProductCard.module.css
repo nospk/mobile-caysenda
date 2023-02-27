@@ -1,27 +1,27 @@
 .product_card {
-    @apply flex flex-col mb-[2.4vw];
+  @apply flex flex-col mb-[2.4vw];
 }
 
 .image_product {
-    @apply relative rounded-lg w-46vw h-46vw;
+  @apply relative rounded-lg w-46vw h-46vw;
 }
 
 .image_square {
-    @apply rounded-t-lg aspect-square;
+  @apply rounded-t-lg aspect-square;
 }
 
-.price {
-    @apply text-red-700 text-2xl font-bold;
+.price_product {
+  @apply text-red-700 text-2xl font-bold;
 }
 
 .info_product {
-    @apply flex flex-col bg-white rounded-b-lg p-[2.4vw] w-46vw text-lg
+  @apply flex flex-col bg-white rounded-b-lg p-[2.4vw] w-46vw text-lg ;
 }
 
 .sold {
-    @apply pt-2 text-sm text-gray-400;
+  @apply pt-2 text-sm text-gray-400;
 }
 
 .add_cart {
-    @apply border-2 h-8 rounded-lg text-red-700 border-red-200;
+  @apply border-2 h-8 rounded-lg text-red-700 border-red-200;
 }
