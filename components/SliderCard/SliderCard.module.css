@@ -1,4 +1,4 @@
 .silder {
-  @apply flex flex-col pb-[2.4vw] w-46vw h-full rounded-xl;
+  @apply flex-col pb-[2.4vw] w-46vw h-auto rounded-xl;
 }
 

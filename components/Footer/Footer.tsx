@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import Link from "next/link";
-import Icon from '@/components/Icon';
+import {Icon} from '@/components/Icon';
 import styles from './Footer.module.css';
 const Footer: FC = () => {
     return (

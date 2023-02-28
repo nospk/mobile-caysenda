@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import type { FC } from 'react';
-import styles from './Icon.module.css'
+import styles from './Icon.module.css';
 interface Props {
 	src: string;
 	alt: string;
@@ -10,7 +10,7 @@ interface Props {
 const Icon: FC<Props> = (props) => {
 	return (
 		<Image
-			className={styles.icon}
+			className={styles.icon_cricle}
 			src={props.src}
 			alt={props.alt}
 			width={props.width}

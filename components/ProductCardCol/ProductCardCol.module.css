@@ -1,5 +1,5 @@
 .product_card {
-  @apply flex flex-col mb-[2.4vw];
+  @apply flex-1 mb-[2.4vw];
 }
 
 .image_product {

@@ -1,7 +1,8 @@
 import { FC, ReactNode } from "react";
 import { useState } from "react";
 import Modal from "@/components/Modal";
-import Icon from "@/components/Icon";
+import {IconCricle} from "@/components/Icon";
+import styles from '@/components/CategoryModal/CategoryModal.module.css'
 interface Props {
     children: ReactNode;
 }
@@ -17,48 +18,48 @@ const MenuModal: FC<Props> = ({ children }) => {
     };
     return (
         <>
-            <div onClick={handleOpenModal}>{children}</div>
+            <div  className={styles.menu_item} onClick={handleOpenModal}>{children}</div>
             <Modal isOpen={isOpen} onClose={handleCloseModal}>
                 <span className="font-bold">Danh Mục Sản Phẩm</span>
                 <div className="grid grid-cols-5">
-                    <div>
-                        <Icon src="/iconProductNews.png" alt="category" width={50} height={50} />
+                    <div className={styles.image_cricle}>
+                        <IconCricle src="/iconProductNews.png" alt="category" width={50} height={50} />
+                        <span>Test Menu</span>
+                    </div>
+                    <div className={styles.image_cricle}>
+                        <IconCricle src="/iconProductNews.png" alt="category" width={50} height={50} />
+                        <span>Test Menu</span>
+                    </div>
+                    <div className={styles.image_cricle}>
+                        <IconCricle src="/iconProductNews.png" alt="category" width={50} height={50} />
                         <span>Test Menu</span>
                     </div>
                     <div>
-                        <Icon src="/iconProductNews.png" alt="category" width={50} height={50} />
+                        <IconCricle src="/iconProductNews.png" alt="category" width={50} height={50} />
                         <span>Test Menu</span>
                     </div>
                     <div>
-                        <Icon src="/iconProductNews.png" alt="category" width={50} height={50} />
+                        <IconCricle src="/iconProductNews.png" alt="category" width={50} height={50} />
                         <span>Test Menu</span>
                     </div>
                     <div>
-                        <Icon src="/iconProductNews.png" alt="category" width={50} height={50} />
+                        <IconCricle src="/iconProductNews.png" alt="category" width={50} height={50} />
                         <span>Test Menu</span>
                     </div>
                     <div>
-                        <Icon src="/iconProductNews.png" alt="category" width={50} height={50} />
+                        <IconCricle src="/iconProductNews.png" alt="category" width={50} height={50} />
                         <span>Test Menu</span>
                     </div>
                     <div>
-                        <Icon src="/iconProductNews.png" alt="category" width={50} height={50} />
+                        <IconCricle src="/iconProductNews.png" alt="category" width={50} height={50} />
                         <span>Test Menu</span>
                     </div>
                     <div>
-                        <Icon src="/iconProductNews.png" alt="category" width={50} height={50} />
+                        <IconCricle src="/iconProductNews.png" alt="category" width={50} height={50} />
                         <span>Test Menu</span>
                     </div>
                     <div>
-                        <Icon src="/iconProductNews.png" alt="category" width={50} height={50} />
-                        <span>Test Menu</span>
-                    </div>
-                    <div>
-                        <Icon src="/iconProductNews.png" alt="category" width={50} height={50} />
-                        <span>Test Menu</span>
-                    </div>
-                    <div>
-                        <Icon src="/iconProductNews.png" alt="category" width={50} height={50} />
+                        <IconCricle src="/iconProductNews.png" alt="category" width={50} height={50} />
                         <span>Test Menu</span>
                     </div>
                 </div>

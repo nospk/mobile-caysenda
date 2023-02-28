@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import Image from 'next/image';
-import styles from './ProductCard.module.css';
+import styles from './ProductCardCol.module.css';
 import { numberToString } from '@/uitls/formatNumberPrice';
 interface Product {
     name: string;

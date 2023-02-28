@@ -1,4 +1,4 @@
-import StickySearch from '@/components/StickSearch';
+import StickySearch from '@/components/StickSearchSpan';
 import Footer from '@/components/Footer';
 import { InferGetServerSidePropsType } from 'next';
 import { GetServerSideProps } from 'next';

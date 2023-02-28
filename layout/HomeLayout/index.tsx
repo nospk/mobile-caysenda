@@ -1,13 +1,13 @@
 import SearchHistory from '@/components/SearchHistory';
-import StickySearch from '@/components/StickSearch';
+import StickSearchSpan from '@/components/StickSearchSpan';
 import Footer from '@/components/Footer';
-import type { ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 
 const HomeLayout = ({ children }: { children: ReactNode }) => {
     return (
         <>
             {/* Search Top Sticky*/}
-            <StickySearch />
+            <StickSearchSpan />
             {/* History Search */}
             <SearchHistory />
             {/* Menu */}
