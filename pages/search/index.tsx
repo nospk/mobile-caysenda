@@ -1,6 +1,8 @@
 import SearchBar from '@/components/SearchBar';
 import { InferGetServerSidePropsType } from 'next';
 import { GetServerSideProps } from 'next';
+import HistoryView from '@/screens/search/HisttoryView';
+import ProductView from '@/screens/search/ProductView';
 interface PageProps {
 	product: string | string[] | undefined;
 }
@@ -15,11 +17,11 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (context)
 const SearchPage = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
 	return (
 		<>
-			<div className='mx-2.5 pt-2'>
-				<SearchBar />
+			<SearchBar />
+			<div className="px-[2.4vw]">
+				<HistoryView />
+				<ProductView />
 			</div>
-
-			<p>{props.product}</p>
 		</>
 	);
 };

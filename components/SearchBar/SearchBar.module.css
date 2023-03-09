@@ -1,5 +1,5 @@
 .sticky_out_wrapper {
-    @apply flex flex-row sticky top-0 z-10 bg-[#f8f8f8] items-center;
+    @apply flex flex-row sticky top-0 z-10 bg-[#f8f8f8] items-center p-[2.4vw];
 }
 
 .sticky_wrapper {

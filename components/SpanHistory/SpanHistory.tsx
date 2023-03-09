@@ -5,7 +5,6 @@ interface Span {
 	textInput: string;
 }
 const SpanHistory: FC<Span> = (props) => {
-	console.log('1');
 	return (
 		<div>
 			<span className={styles.text_search}>
