@@ -1,17 +1,15 @@
 import type { FC } from 'react'
 import { useRouter } from 'next/router'
-import { BsSearch } from 'react-icons/bs'
+import { BiBarcodeReader } from 'react-icons/bi'
+import styles from './StickySearch.module.css'
 
-import styles from './StickSearch.module.css'
-import Link from 'next/link'
 const StickySearch: FC = () => {
   const router = useRouter()
   return (
     <div className={styles.sticky_out_wrapper}>
-      <div className='h-2'></div>
       <div className={styles.sticky_wrapper}>
         <span className={styles.search_icon}>
-          <BsSearch className='ml-auto mr-auto' />
+          <BiBarcodeReader size={25} className='ml-auto mr-auto' />
         </span>
         <span
           className={styles.search_text}
@@ -26,7 +24,6 @@ const StickySearch: FC = () => {
           Tìm
         </button>
       </div>
-      <div className='h-1'></div>
     </div>
   )
 }

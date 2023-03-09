@@ -1,0 +1,25 @@
+.sticky_out_wrapper {
+    @apply flex flex-row sticky top-0 z-10 bg-[#f8f8f8] items-center;
+}
+
+.sticky_wrapper {
+    @apply grow border-2 border-solid border-[#ed471f] rounded-lg bg-white flex justify-center items-center h-11 max-w-full;
+}
+
+.search_icon {
+    @apply flex-1 px-2 max-w-40px relative float-right;
+}
+
+.search_text {
+    @apply flex-1 px-1 border-l-2 relative w-full outline-none whitespace-pre-wrap bg-white text-[#606060];
+}
+
+.search_button {
+    @apply flex-1 relative max-w-[80px] font-light h-full float-left bg-[#ed471f] text-white p-1;
+}
+.bar_back{
+    @apply flex;
+}
+.search_select{
+    @apply px-1 ;
+}

@@ -2,3 +2,6 @@
   @apply flex-col pb-[2.4vw] w-46vw h-auto rounded-xl;
 }
 
+.image{
+  @apply h-[500px] relative;
+}

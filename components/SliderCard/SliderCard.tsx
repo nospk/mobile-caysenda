@@ -31,7 +31,7 @@ const SliderCard: FC<Props> = props => {
         {props.banner.map((slide, index) => (
           <SwiperSlide key={'slide'+index}>
             <Link href='/product'>
-              <div className='h-80 w-50'>
+              <div className={styles.image}>
                 <Image
                   className='rounded-xl'
                   src={slide.src}
@@ -39,6 +39,7 @@ const SliderCard: FC<Props> = props => {
                   sizes='46.4vw,46.4vw'
                   fill
                   style={{ objectFit: 'cover' }}
+                  priority
                 />
               </div>
             </Link>
