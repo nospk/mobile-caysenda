@@ -17,7 +17,23 @@ const HistoryView: FC = () => {
 		'Balo Abc 3',
 		'Balo Abc 4',
 	]);
-	const listUseSearch = textUserSearchs.map((textSearch) => (
+	const [textEveryBodySearchs] = useState([
+		'Quần',
+		'Áo',
+		'Bàn Chải',
+		'Kem',
+		'Balo 1',
+		'Balo 2',
+		'Balo 3',
+		'Balo Abc 1',
+		'Balo Abc 2',
+		'Balo Abc 3',
+		'Balo Abc 4',
+	]);
+	const listUserSearch = textUserSearchs.map((textSearch) => (
+		<SpanHistory key={textSearch} textInput={textSearch} />
+	));
+	const listEveryBodSearch = textEveryBodySearchs.map((textSearch) => (
 		<SpanHistory key={textSearch} textInput={textSearch} />
 	));
 	return (
@@ -26,11 +42,11 @@ const HistoryView: FC = () => {
 				<span className="flex-1 text-lg font-semibold">Lịch Sử Tìm Kiếm</span>
 				<VscTrash size={24} className="order-last" onClick={() => settextUserSearchs([])} />
 			</div>
-			<div className="flex flex-row flex-wrap gap-4">{listUseSearch}</div>
+			<div className="flex flex-row flex-wrap gap-4">{listUserSearch}</div>
 			<div className="py-3 flex flex-row justify-center">
 				<span className="flex-1 text-lg font-semibold">Mọi Người Đang Tìm Kiếm</span>
 			</div>
-			<div className="flex flex-row flex-wrap gap-4">{listUseSearch}</div>
+			<div className="flex flex-row flex-wrap gap-4">{listEveryBodSearch}</div>
 		</>
 	);
 };

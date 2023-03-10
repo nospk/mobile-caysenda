@@ -4,7 +4,7 @@ import HomeLayout from '@/layouts/HomeLayout';
 import ProductCard from '@/components/ProductCardCol';
 import Menu from '@/components/Menu';
 import Head from '@/components/Head';
-import ProductFlexLayout from '@/layouts/ProductFlexLayout';
+import FlexLeftRightLayout from '@/layouts/FlexLeftRightLayout';
 import SliderCard from '@/components/SliderCard';
 import SearchCardCol from '@/components/SearchCardCol';
 import StickSearch from '@/components/StickSearch';
@@ -57,10 +57,10 @@ const Home: NextPageWithLayout = () => {
 			<div className={styles.search_history}>{listHistory}</div>
 			<Menu />
 			{/* Show Products */}
-			<ProductFlexLayout>
+			<FlexLeftRightLayout>
 				<div className="flex-1">{listLeft}</div>
 				<div className="flex-1">{listRight}</div>
-			</ProductFlexLayout>
+			</FlexLeftRightLayout>
 		</>
 	);
 };
