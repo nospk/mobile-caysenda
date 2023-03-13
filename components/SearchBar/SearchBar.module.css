@@ -21,5 +21,23 @@
     @apply flex;
 }
 .search_select{
-    @apply px-1 ;
+    @apply px-1 inline-flex justify-center items-center;
+}
+.icon_center{
+    @apply ml-auto mr-auto;
+}
+.dropdown{
+    @apply relative inline-block;
+}
+.dropdown_wapper{
+    @apply absolute mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 w-full;
+}
+.dropdown_select{
+    @apply py-1 divide-y divide-solid;
+}
+.dropdown_select_item_active{
+    @apply block px-1 py-2 text-sm  text-red-700 hover:bg-blue-500 hover:text-white;
+}
+.dropdown_select_item{
+    @apply block px-1 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white;
 }

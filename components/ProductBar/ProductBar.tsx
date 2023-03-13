@@ -7,20 +7,19 @@ interface Product {
 	sold: number;
 	image: string;
 	link: string;
+	id: string;
+	index: number;
 }
-const ACHIEVEMENT = {
-    1: 'bg-red-500',
-    2: 'bg-orange-400',
-    3: 'bg-yellow-400',
-    4: 'bg-gray-400'
-}
+const ACHIEVEMENT = ['top_1', 'top_2', 'top_3', 'top_other'];
 
 const ProductBar: FC<Product> = (product) => {
+	const color =
+		ACHIEVEMENT[product.index] != undefined ? ACHIEVEMENT[product.index] : ACHIEVEMENT[3];
 	return (
 		<Link href={product.link}>
-			<div className="flex flex-row">
-				<span className="absolute z-10 text-white bg-red-500 p-1 rounded-full">1</span>
-				<div className="relative h-[15vw] w-[15vw]">
+			<div className={styles.product_item}>
+				<span className={styles[color]}>{product.index + 1}</span>
+				<div className={styles.product_image}>
 					<Image
 						className="rounded-lg"
 						src={product.image}
@@ -30,9 +29,9 @@ const ProductBar: FC<Product> = (product) => {
 						style={{ objectFit: 'cover' }}
 					/>
 				</div>
-				<div className="grow p-2 space-y-1.5">
+				<div className={styles.product_info}>
 					<p> {product.name}</p>
-					<p className="text-gray-400"> {product.sold}</p>
+					<p className={styles.product_sold}> {product.sold}</p>
 				</div>
 			</div>
 		</Link>
