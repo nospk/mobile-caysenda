@@ -14,7 +14,7 @@ const Footer: FC = () => {
                 </div>
                 <div className="w-1/4">
                     <Link href="/video">
-                        <Icon src="/iconPerson.png" alt="Camera" width={25} height={25} />
+                        <Icon src="/iconVideos.png" alt="Camera" width={25} height={25} />
                         <span>Videos SP</span>
                     </Link>
                 </div>

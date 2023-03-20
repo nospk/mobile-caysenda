@@ -19,7 +19,7 @@ const MenuModal: FC<Props> = ({ children }) => {
     return (
         <>
             <div  className={styles.menu_item} onClick={handleOpenModal}>{children}</div>
-            <Modal isOpen={isOpen} onClose={handleCloseModal}>
+            <Modal isOpen={isOpen} styleModal={styles.modal} styleModalOverlay={styles.modalOverlay} onClose={handleCloseModal}>
                 <span className="font-bold">Danh Mục Sản Phẩm</span>
                 <div className="grid grid-cols-5">
                     <div className={styles.image_cricle}>

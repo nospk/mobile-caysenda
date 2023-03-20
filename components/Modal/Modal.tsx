@@ -1,28 +1,28 @@
-import type { FC, ReactNode } from "react";
-import styles from "./Modal.module.css";
+import type { FC, ReactNode } from 'react';
 
 interface ModalProps {
-    isOpen: boolean;
-    onClose: () => void;
-    children: ReactNode;
+	isOpen: boolean;
+	onClose: () => void;
+	children: ReactNode;
+	styleModal: string;
+	styleModalOverlay: string;
 }
-const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
-    const closeModal = () => {
-        onClose();
-    };
-
-    return (
-        <>
-            {isOpen && (
-                <div className={styles.modalOverlay} onDrag={closeModal} onClick={closeModal}>
-                    <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-                        <div>{children}</div>
-                    </div>
-                </div>
-            )}
-        </>
-    );
-}
+const Modal: FC<ModalProps> = ({ styleModal, styleModalOverlay, isOpen, onClose, children }) => {
+	const closeModal = () => {
+		onClose();
+	};
+	return (
+		<>
+			{isOpen && (
+				<div className={styleModalOverlay} onDrag={closeModal} onClick={closeModal}>
+					<div className={styleModal} onClick={(e) => e.stopPropagation()}>
+						<div>{children}</div>
+					</div>
+				</div>
+			)}
+		</>
+	);
+};
 
 export default Modal;

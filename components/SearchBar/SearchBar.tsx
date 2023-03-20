@@ -2,8 +2,10 @@ import { FC, useState, useRef, useEffect } from 'react';
 import { MdArrowBackIosNew, MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import styles from './SearchBar.module.css';
 import Link from 'next/link';
-
-const SearchBar: FC = () => {
+interface Props {
+	site: string;
+}
+const SearchBar: FC<Props> = (props) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const dropdownRef = useRef<HTMLInputElement>(null);
 	useEffect(() => {
@@ -29,13 +31,9 @@ const SearchBar: FC = () => {
 					<MdArrowBackIosNew size={30} className={styles.icon_center} />
 				</Link>
 			</div>
-
 			<div className={styles.sticky_wrapper}>
 				<div className={styles.dropdown} ref={dropdownRef}>
-					<button
-						className={styles.search_select}
-						onClick={() => setIsOpen(!isOpen)}
-					>
+					<button className={styles.search_select} onClick={() => setIsOpen(!isOpen)}>
 						Tìm sản phẩm
 						<MdOutlineKeyboardArrowDown />
 					</button>
@@ -47,11 +45,23 @@ const SearchBar: FC = () => {
 							tabIndex={-1}
 						>
 							<div className={styles.dropdown_select} role="none">
-								<div className={styles.dropdown_select_item_active}>
-									<span onClick={() => setIsOpen(false)}>Tìm sản phẩm</span>
+								<div
+									className={`${styles.dropdown_select_item} ${
+										props.site === 'product' ? styles.active : ''
+									}`}
+									onClick={() => setIsOpen(false)}
+								>
+									<Link href="/search">
+										<span>Tìm sản phẩm</span>
+									</Link>
 								</div>
-								<div className={styles.dropdown_select_item}>
-									<Link href="/search_videos">
+								<div
+									className={`${styles.dropdown_select_item} ${
+										props.site === 'video' ? styles.active : ''
+									}`}
+									onClick={() => setIsOpen(false)}
+								>
+									<Link href="/search_video">
 										<span>Tìm videos</span>
 									</Link>
 								</div>

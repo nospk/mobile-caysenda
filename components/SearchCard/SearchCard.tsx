@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import styles from './SearchCardCol.module.css'
+import styles from './SearchCard.module.css'
 import { BsSearch } from 'react-icons/bs'
 
 interface Search {

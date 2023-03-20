@@ -1,12 +1,12 @@
 import type { NextPageWithLayout } from '@/pages/_app';
 import { type ReactElement, useState } from 'react';
 import HomeLayout from '@/layouts/HomeLayout';
-import ProductCard from '@/components/ProductCardCol';
+import ProductCard from '@/components/ProductCard';
 import Menu from '@/components/Menu';
 import Head from '@/components/Head';
 import FlexLeftRightLayout from '@/layouts/FlexLeftRightLayout';
 import SliderCard from '@/components/SliderCard';
-import SearchCardCol from '@/components/SearchCardCol';
+import SearchCardCol from '@/components/SearchCard';
 import StickSearch from '@/components/StickSearch';
 import SpanHistory from '@/components/SpanHistory';
 import styles from './index.module.css';

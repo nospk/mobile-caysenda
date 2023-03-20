@@ -1,0 +1,20 @@
+.sticky_out_wrapper {
+    @apply sticky top-0 z-10 bg-[#f8f8f8] mx-2.5 py-2 space-y-1;
+}
+
+.sticky_wrapper {
+    @apply flex justify-center text-center items-center h-11 max-w-full;
+}
+
+.avatar {
+    @apply flex-1 max-w-40px relative float-right min-w-[60px];
+}
+.img{
+    @apply border-2 rounded-full border-black ml-auto mr-auto;
+}
+.icon {
+    @apply flex-1 relative float-left max-w-60px w-[60px] ;
+}
+.title{
+    @apply grow text-lg font-medium;
+}
