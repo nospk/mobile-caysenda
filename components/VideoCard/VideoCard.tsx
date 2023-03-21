@@ -1,16 +1,18 @@
 import type { FC } from 'react';
 import Image from 'next/image';
 import styles from './VideoCard.module.css';
-import { numberToString } from '@/uitls/formatNumberPrice';
-interface Product {
+import { useRouter } from 'next/router';
+interface Video {
 	name: string;
 	detail: string;
 	image: string;
+	id: string;
 }
 
-const ProductCard: FC<Product> = (props) => {
+const ProductCard: FC<Video> = (props) => {
+	const router = useRouter();
 	return (
-		<div className={styles.product_card}>
+		<div className={styles.product_card} onClick={() => router.push(`/video/${props.id}`)}>
 			<div className={styles.image_product}>
 				<Image
 					className={styles.image_square}

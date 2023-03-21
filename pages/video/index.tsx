@@ -9,7 +9,7 @@ import { type ReactElement, useState } from 'react';
 import type { NextPageWithLayout } from '@/pages/_app';
 import { useRef } from 'react';
 import FlexLeftRightLayout from '@/layouts/FlexLeftRightLayout';
-import VideoModal from '@/components/VideoModal';
+
 const Video: NextPageWithLayout = () => {
 	const router = useRouter();
 	const productsLefts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -32,6 +32,7 @@ const Video: NextPageWithLayout = () => {
 			name="Kẹo dẻo"
 			detail="Kẹo dẻo mềm thơm ngon"
 			image={`https://source.unsplash.com/random/300x300?sig=${Math.random() * 100}`}
+			id="349938442291"
 		/>
 	));
 	const listRight = productsRights.map((productsRight) => (
@@ -40,6 +41,7 @@ const Video: NextPageWithLayout = () => {
 			name="Kẹo dẻo"
 			detail="Kẹo dẻo mềm thơm ngon"
 			image={`https://source.unsplash.com/random/300x300?sig=${Math.random() * 100}`}
+			id="349938442291"
 		/>
 	));
 	listLeft.unshift(<SliderCard key={30} banner={listslideBanner} />);
@@ -63,7 +65,6 @@ const Video: NextPageWithLayout = () => {
 				<div className="flex-1">{listLeft}</div>
 				<div className="flex-1">{listRight}</div>
 			</FlexLeftRightLayout>
-			<VideoModal />
 		</>
 	);
 };
