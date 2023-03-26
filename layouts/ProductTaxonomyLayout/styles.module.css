@@ -9,8 +9,8 @@
 .avatar {
     @apply flex-1 max-w-40px relative float-right min-w-[60px];
 }
-.img{
-    @apply border-2 rounded-full border-black ml-auto mr-auto;
+.back{
+    @apply ml-auto mr-auto;
 }
 .icon {
     @apply flex-1 relative float-left max-w-60px w-[60px] ;

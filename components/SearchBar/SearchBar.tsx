@@ -2,12 +2,16 @@ import { FC, useState, useRef, useEffect } from 'react';
 import { MdArrowBackIosNew, MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import styles from './SearchBar.module.css';
 import Link from 'next/link';
-interface Props {
+import { useRouter } from 'next/router';
+interface Search {
 	site: string;
+	showType?: boolean;
+	productType?: string;
 }
-const SearchBar: FC<Props> = (props) => {
+const SearchBar: FC<Search> = ({ site, productType, showType = true }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const dropdownRef = useRef<HTMLInputElement>(null);
+	const router = useRouter();
 	useEffect(() => {
 		const handleOutsideClick = (event: any) => {
 			if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -26,15 +30,16 @@ const SearchBar: FC<Props> = (props) => {
 	}, [dropdownRef]);
 	return (
 		<div className={styles.sticky_out_wrapper}>
-			<div className={styles.bar_back}>
-				<Link href="/">
-					<MdArrowBackIosNew size={30} className={styles.icon_center} />
-				</Link>
+			<div className={styles.bar_back} onClick={() => router.back()}>
+				<MdArrowBackIosNew size={30} className={styles.icon_center} />
 			</div>
 			<div className={styles.sticky_wrapper}>
 				<div className={styles.dropdown} ref={dropdownRef}>
-					<button className={styles.search_select} onClick={() => setIsOpen(!isOpen)}>
-						Tìm sản phẩm
+					<button
+						className={`${showType ? styles.search_select : 'hidden'}`}
+						onClick={() => setIsOpen(!isOpen)}
+					>
+						{site == 'product' ? 'Tìm sản phẩm' : 'Tìm videos'}
 						<MdOutlineKeyboardArrowDown />
 					</button>
 					{isOpen && (
@@ -47,7 +52,7 @@ const SearchBar: FC<Props> = (props) => {
 							<div className={styles.dropdown_select} role="none">
 								<div
 									className={`${styles.dropdown_select_item} ${
-										props.site === 'product' ? styles.active : ''
+										site === 'product' ? styles.active : ''
 									}`}
 									onClick={() => setIsOpen(false)}
 								>
@@ -57,7 +62,7 @@ const SearchBar: FC<Props> = (props) => {
 								</div>
 								<div
 									className={`${styles.dropdown_select_item} ${
-										props.site === 'video' ? styles.active : ''
+										site === 'video' ? styles.active : ''
 									}`}
 									onClick={() => setIsOpen(false)}
 								>

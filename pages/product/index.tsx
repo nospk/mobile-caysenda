@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 const Account: NextPage = () => {
   return (
     <>
-      <p>Sản Phẩm</p>
+      <p>Sản Phẩm 1</p>
       <Footer />
     </>
   )
