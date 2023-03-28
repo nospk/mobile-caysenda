@@ -1,7 +1,7 @@
 import '@/styles/globals.css'
 import type { ReactElement, ReactNode } from 'react';
 import type { AppProps } from 'next/app';
-import { Inter } from '@next/font/google';
+import { Open_Sans } from '@next/font/google';
 import { Provider } from 'react-redux';
 import { wrapper } from '@/redux/store';
 import type { NextPage } from 'next';
@@ -11,10 +11,10 @@ type AppPropsWithLayout = AppProps & {
 }
 
 
-const fonter = Inter({
+const fonter = Open_Sans({
   subsets: ['latin'],
   weight: '400',
-  variable: '--font-inter',
+  variable: '--font-google',
 })
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {

@@ -46,7 +46,7 @@ const Home: NextPageWithLayout = () => {
 	listLeft.unshift(<SliderCard key={30} banner={listslideBanner} />);
 	// prettier-ignore
 	listRight.splice(3, 0,<SearchCardCol key={31} keywords={["Quần Áo", "Đồ trẻ em", "Túi xách", "Quần jean", "Áo Thun", "Túi xách hình con thỏ", "Tai nghe bluetooth", "Điện thoại Iphone"]}/>)
-	const textInputs = ['Áo Nữ', 'Thời trang nam nữ', 'ốp điện thoại', 'Quần áo trẻ em'];
+	const textInputs = ['Áo Nữ', 'Thời trang nam nữ', 'ốp điện thoại', 'Quần áo trẻ em', 'Quần áo trẻ em', 'Quần áo trẻ em', 'Quần áo trẻ em'];
 	let listHistory = textInputs.map((textInput) => (
 		<SpanHistory key={textInput} textInput={textInput} />
 	));

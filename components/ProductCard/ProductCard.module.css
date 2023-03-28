@@ -11,17 +11,20 @@
 }
 
 .price_product {
-  @apply text-red-700 text-2xl font-bold;
+  @apply text-[#ee0000] text-xl font-bold;
 }
 
 .info_product {
-  @apply flex flex-col bg-white rounded-b-lg p-[2.4vw] w-46vw text-lg ;
+  @apply flex flex-col bg-white rounded-b-lg p-[2.4vw] w-46vw;
 }
 
 .sold {
-  @apply pt-2 text-sm text-gray-400;
+  @apply pt-2 ;
 }
 
 .add_cart {
-  @apply border-2 h-8 rounded-lg text-red-700 border-red-200;
+  @apply border-[1px] rounded-lg text-[#f66d09] font-bold border-[#f3bd9936] py-2;
+}
+.name_product{
+  @apply text-[#0062bd] font-bold;
 }

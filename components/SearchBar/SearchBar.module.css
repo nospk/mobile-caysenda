@@ -15,13 +15,13 @@
 }
 
 .search_button {
-    @apply flex-1 relative max-w-[80px] font-light h-full float-left bg-[#ed471f] text-white p-1;
+    @apply flex-1 relative max-w-[50px] font-light h-full float-left bg-[#ed471f] text-white p-1;
 }
 .bar_back{
     @apply flex;
 }
 .search_select{
-    @apply px-1 inline-flex justify-center items-center;
+    @apply px-1 inline-flex justify-center items-center w-[100px];
 }
 .icon_center{
     @apply ml-auto mr-auto;

@@ -6,11 +6,9 @@ interface Span {
 }
 const SpanHistory: FC<Span> = (props) => {
 	return (
-		<div>
-			<span className={styles.text_search}>
-				<Link href={`/search?keyword=${props.textInput}`}>{props.textInput}</Link>
-			</span>
-		</div>
+		<span className={styles.text_search}>
+			<Link href={`/search?keyword=${props.textInput}`}>{props.textInput}</Link>
+		</span>
 	);
 };
 

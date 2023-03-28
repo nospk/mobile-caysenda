@@ -39,7 +39,7 @@ const SearchBar: FC<Search> = ({ site, productType, showType = true }) => {
 						className={`${showType ? styles.search_select : 'hidden'}`}
 						onClick={() => setIsOpen(!isOpen)}
 					>
-						{site == 'product' ? 'Tìm sản phẩm' : 'Tìm videos'}
+						{site == 'product' ? 'Sản phẩm' : 'Video'}
 						<MdOutlineKeyboardArrowDown />
 					</button>
 					{isOpen && (
@@ -57,7 +57,7 @@ const SearchBar: FC<Search> = ({ site, productType, showType = true }) => {
 									onClick={() => setIsOpen(false)}
 								>
 									<Link href="/search">
-										<span>Tìm sản phẩm</span>
+										<span>Sản Phẩm</span>
 									</Link>
 								</div>
 								<div
@@ -67,15 +67,22 @@ const SearchBar: FC<Search> = ({ site, productType, showType = true }) => {
 									onClick={() => setIsOpen(false)}
 								>
 									<Link href="/search_video">
-										<span>Tìm videos</span>
+										<span>Video</span>
 									</Link>
 								</div>
 							</div>
 						</div>
 					)}
 				</div>
-				<input className={styles.search_text} placeholder="Tìm Theo Tên Sản Phẩm ..." />
-				<button className={styles.search_button}>Tìm Kiếm</button>
+				<input
+					className={styles.search_text}
+					placeholder={
+						site == 'product'
+							? 'Tìm Theo Tên Sản Phẩm ...'
+							: 'Tìm Theo Tên Video ...'
+					}
+				/>
+				<button className={styles.search_button}>Tìm</button>
 			</div>
 		</div>
 	);

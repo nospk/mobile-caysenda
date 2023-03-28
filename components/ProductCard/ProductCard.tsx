@@ -23,7 +23,7 @@ const ProductCard: FC<Product> = (props) => {
 				/>
 			</div>
 			<div className={styles.info_product}>
-				<span>{props.name}</span>
+				<span className={styles.name_product}>{props.name}</span>
 				<span className={styles.price_product}>{numberToString(props.price)}đ</span>
 				<div className={styles.sold}>
 					<span className="float-left">Đã bán:</span>

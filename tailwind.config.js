@@ -14,7 +14,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', ...fontFamily.sans],
+        sans: ['var(--font-google)', ...fontFamily.sans],
       },
       maxWidth:{
         '40px':'40px',
