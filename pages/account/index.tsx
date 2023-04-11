@@ -1,12 +1,10 @@
-import type { NextPage } from 'next'
-import Footer from '@/components/Footer'
-
-const Account: NextPage = () => {
-    return (
-      <>
-        <p>Account</p>
-        <Footer />
-      </>
-    )
-  }
-  export default Account
+import HomeLayout from "@/layouts/HomeLayout";
+import { type ReactElement } from "react";
+import type { NextPageWithLayout } from "@/pages/_app";
+const Account: NextPageWithLayout = () => {
+  return <>hello</>;
+};
+Account.getLayout = function getLayout(page: ReactElement) {
+  return <HomeLayout>{page}</HomeLayout>;
+};
+export default Account;
