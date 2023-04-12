@@ -36,6 +36,7 @@ const Account: NextPageWithLayout = () => {
           </div>
         </div>
       </div>
+      <div>Test</div>
     </>
   );
 };
