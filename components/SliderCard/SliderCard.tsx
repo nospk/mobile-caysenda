@@ -39,7 +39,6 @@ const SliderCard: FC<Props> = props => {
                   sizes='46.4vw,46.4vw'
                   fill
                   style={{ objectFit: 'cover' }}
-                  priority
                 />
               </div>
             </Link>

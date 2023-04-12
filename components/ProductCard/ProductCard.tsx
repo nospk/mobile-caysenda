@@ -20,6 +20,7 @@ const ProductCard: FC<Product> = (props) => {
 					sizes="46.4vw,46.4vw"
 					fill
 					style={{ objectFit: 'cover' }}
+					priority
 				/>
 			</div>
 			<div className={styles.info_product}>
