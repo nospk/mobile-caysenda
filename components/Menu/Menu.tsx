@@ -4,16 +4,19 @@ import { Icon } from '@/components/Icon';
 import CategoryModal from '@/components/CategoryModal';
 import Link from 'next/link';
 
-const Menu: FC = () => {
+const Menu: FC<{ showCategory: boolean }> = ({ showCategory }) => {
 	return (
 		<>
 			<div className={styles.menu}>
-				<CategoryModal>
-					<div className={styles.menu_icon}>
-						<Icon src="/iconCategory.png" alt="category" width={50} height={50} />
-					</div>
-					<span>Danh Mục</span>
-				</CategoryModal>
+				{showCategory && (
+					<CategoryModal>
+						<div className={styles.menu_icon}>
+							<Icon src="/iconCategory.png" alt="category" width={50} height={50} />
+						</div>
+						<span>Danh Mục</span>
+					</CategoryModal>
+				)}
+
 				<div className={styles.menu_item}>
 					<Link href="/product-sale">
 						<div className={styles.menu_icon}>

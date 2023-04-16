@@ -28,8 +28,7 @@ const ProductAvailability: NextPage = () => {
 			image={`https://source.unsplash.com/random/300x300?sig=${Math.random() * 100}`}
 		/>
 	));
-	// prettier-ignore
-	listRight.splice(3, 0,<SearchCardCol key={31} keywords={["Quần Áo", "Đồ trẻ em", "Túi xách", "Quần jean", "Áo Thun", "Túi xách hình con thỏ", "Tai nghe bluetooth", "Điện thoại Iphone"]}/>)
+
 	useEffect(() => {}, [productAvailable]);
 
 	return (

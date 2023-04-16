@@ -5,12 +5,14 @@ import HomeLayout from '@/layouts/HomeLayout';
 import Menu from '@/components/Menu';
 import Head from '@/components/Head';
 import { wrapper, AppState } from '@/redux/store';
-
-
+import dynamic from 'next/dynamic';
 import StickSearch from '@/components/StickSearch';
 import SpanHistory from '@/components/SpanHistory';
 import styles from './index.module.css';
-const ProductView = lazy(() => import('@/screens/home/Productview'));
+import ProductView from '@/screens/home/Productview';
+//const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+// const ProductView = lazy(() => import('@/screens/home/Productview'));
+
 export const getServerSideProps = wrapper.getServerSideProps(
 	(store) =>
 		async ({ req, res, ...etc }) => {
@@ -28,6 +30,10 @@ export const getServerSideProps = wrapper.getServerSideProps(
 		}
 );
 const Home: NextPageWithLayout = (props: any) => {
+	// const ProductView = dynamic(() => import('@/screens/home/Productview'), {
+	// 	loading: () => <p>Loading...</p>,
+	// 	ssr: false,
+	// });
 	const textInputs = [
 		'Áo Nữ',
 		'Thời trang nam nữ',
@@ -45,15 +51,13 @@ const Home: NextPageWithLayout = (props: any) => {
 			<Head title="Trang chủ - Cây Sen Đá" description="test" />
 			<StickSearch />
 			<div className={styles.search_history}>{listHistory}</div>
-			<Menu />
+			<Menu showCategory={true}/>
 			{/* Show Products */}
-			<Suspense fallback={<div className="text-center">Loading</div>}>
-				<ProductView
-					slideBanners={props.pageProps.slideBanners}
-					productsLefts={props.pageProps.productsLefts}
-					productsRights={props.pageProps.productsRights}
-				/>
-			</Suspense>
+			<ProductView
+				slideBanners={props.pageProps.slideBanners}
+				productsLefts={props.pageProps.productsLefts}
+				productsRights={props.pageProps.productsRights}
+			/>
 		</>
 	);
 };

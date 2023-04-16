@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './OfferBar.module.css'
+import styles from './OfferBar.module.css';
 interface Props {
 	offers: {
 		src: string;
@@ -20,9 +20,10 @@ const OfferBar: FC<Props> = (props) => {
 						className={styles.image_offer}
 						src={props.offers[0].src}
 						alt={props.offers[0].alt}
-						sizes="31vw,31vw"
+						sizes="46vw"
 						fill
 						style={{ objectFit: 'cover' }}
+						priority
 					/>
 					<div className={styles.product_offer}>
 						<span>{props.offers[0].productName}</span>
@@ -35,7 +36,7 @@ const OfferBar: FC<Props> = (props) => {
 						className={styles.image_offer}
 						src={props.offers[1].src}
 						alt={props.offers[1].alt}
-						sizes="31vw,31vw"
+						sizes="46vw"
 						fill
 						style={{ objectFit: 'cover' }}
 					/>
@@ -50,7 +51,7 @@ const OfferBar: FC<Props> = (props) => {
 						className={styles.image_offer}
 						src={props.offers[2].src}
 						alt={props.offers[2].alt}
-						sizes="31vw,31vw"
+						sizes="46vw"
 						fill
 						style={{ objectFit: 'cover' }}
 					/>

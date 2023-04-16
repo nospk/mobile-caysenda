@@ -30,22 +30,24 @@ const ProductView: FC<{ slideBanners: any; productsLefts: any; productsRights: a
 			link: '/product',
 		};
 	});
-	const listLeft = productsLefts.map((productsLeft: any) => (
+	const listLeft = productsLefts.map((productsLeft: any, index: number) => (
 		<ProductCard
 			key={productsLeft}
 			name="Kẹo dẻo"
 			price={100000}
 			sold={300}
 			image={`https://source.unsplash.com/random/300x300?sig=${Math.random() * 100}`}
+			priority={index == 0 ? true : false}
 		/>
 	));
-	const listRight = productsRights.map((productsRight: any) => (
+	const listRight = productsRights.map((productsRight: any, index: number) => (
 		<ProductCard
 			key={productsRight}
 			name="Kẹo dẻo"
 			price={100000}
 			sold={300}
 			image={`https://source.unsplash.com/random/300x300?sig=${Math.random() * 100}`}
+			priority={index < 2 ? true : false}
 		/>
 	));
 	listLeft.unshift(<SliderCard key={30} banner={listslideBanner} />);
