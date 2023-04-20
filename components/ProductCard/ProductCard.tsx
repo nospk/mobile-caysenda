@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./ProductCard.module.css";
 import { numberToString } from "@/uitls/formatNumberPrice";
 import type { Product } from "@/types/product";
+import { useRouter } from 'next/router';
 type ProductCard = Product & {
   priority?: boolean;
 };
@@ -26,9 +27,10 @@ const toBase64 = (str: string) =>
     ? Buffer.from(str).toString("base64")
     : window.btoa(str);
 const ProductCard: FC<ProductCard> = (props) => {
+  const router = useRouter();
   return (
     <div className={styles.product_card}>
-      <div className={styles.image_product}>
+      <div className={styles.image_product} onClick={() => router.push('/category/product')}>
         <Image
           className={styles.image_square}
           src={props.image}

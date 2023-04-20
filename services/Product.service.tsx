@@ -1,12 +1,20 @@
-import API from "@/uitls/api";
-import type { Product } from "@/types/product";
+import API from '@/uitls/api';
+import type { Product } from '@/types/product';
+const env = process.env.NODE_ENV;
+console.log(env)
+let link: string = '';
+if (env == 'development') {
+	link = 'http://localhost:3000/api/product';
+} else if (env == 'production') {
+	link = 'https://test.caysenda.vn/api/product';
+}
 const getListProduct = async () => {
-  let products: Product[] = await API.GETOTHER({
-    path: "https://bu3neg-3000.csb.app/api/product",
-  });
-  return products;
+	let products: Product[] = await API.GETOTHER({
+		path: link,
+	});
+	return products;
 };
-const Product = {
-  getListProduct,
+const ProductService = {
+	getListProduct,
 };
-export default Product;
+export default ProductService;

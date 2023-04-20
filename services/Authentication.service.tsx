@@ -1,9 +1,9 @@
 import API from "@/uitls/api";
 
-const login: FC<{ username: string; password: string }> = async ({
+const login = async ({
   username,
   password,
-}) => {
+}:{ username: string; password: string }) => {
   let user = await API.GET({
     path: "/authentication/login",
     data: { username, password },
@@ -11,7 +11,7 @@ const login: FC<{ username: string; password: string }> = async ({
   });
   return user;
 };
-const checkToken: FC<string> = async (token) => {
+const checkToken= async ({token}:{token:string}) => {
   let check = await API.GET({
     path: "/authentication/check-token",
     data: token,

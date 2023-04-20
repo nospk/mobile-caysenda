@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    @apply bg-[#f8f8f8];
+body {
+	@apply bg-[#f8f8f8];
+}
+
+.swiper-pagination-fraction {
+    border: 0px solid black;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    position: absolute;
+    right: 2.4vw;
+    bottom: 24.2667vw;
+    z-index: 98;
+    padding: 1.2vw 1.3333vw;
+    height: 5.3333vw;
+    border-radius: 2.6667vw;
+    font-size: 2.9333vw;
+    line-height: 2.9333vw;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
 }

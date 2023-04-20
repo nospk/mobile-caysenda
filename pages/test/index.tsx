@@ -25,12 +25,12 @@ const Page: NextPage = ({}) => {
       username: "nospk1706@gmail.com",
       password: "123",
     });
-    console.log(auth.token);
+
     dispatch(setKeyWordHome(["auth"]));
     let checkToken = await Auth.checkToken({
       token: auth.token,
     });
-    console.log(checkToken);
+
   };
 
   useEffect(() => {

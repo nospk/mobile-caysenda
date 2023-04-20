@@ -10,7 +10,7 @@ import StickSearch from "@/components/StickSearch";
 import SpanHistory from "@/components/SpanHistory";
 import styles from "./index.module.css";
 import ProductView from "@/screens/home/Productview";
-import Product from "@/services/Product.service";
+import ProductService from "@/services/Product.service";
 
 //const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 // const ProductView = lazy(() => import('@/screens/home/Productview'));
@@ -18,7 +18,7 @@ import Product from "@/services/Product.service";
 export const getServerSideProps = wrapper.getServerSideProps(
   (store) =>
     async ({ req, res, ...etc }) => {
-      let listProduct = await Product.getListProduct();
+      let listProduct = await ProductService.getListProduct();
       const productsLefts = listProduct.slice(0, 10);
       const productsRights = listProduct.slice(10);
       const slideBanners = [
@@ -32,7 +32,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
       };
     }
 );
-const Home: NextPageWithLayout = (props: any) => {
+const Home: NextPageWithLayout<any> = (props) => {
   // const ProductView = dynamic(() => import('@/screens/home/Productview'), {
   // 	loading: () => <p>Loading...</p>,
   // 	ssr: false,

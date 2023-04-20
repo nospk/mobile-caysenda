@@ -22,7 +22,7 @@ const VideoPlay = (props: InferGetServerSidePropsType<typeof getServerSideProps>
 		vidRef.current?.pause();
 	};
     const handleToggleVideo = () => (vidRef.current?.paused ? handlePlay() : handlePause());
-    console.log('render')
+
 	return (
 		<>
 			<video ref={vidRef} autoPlay muted style={{ height: '100%' }} onClick={handleToggleVideo}>
