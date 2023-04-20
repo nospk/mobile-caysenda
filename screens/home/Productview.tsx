@@ -1,66 +1,69 @@
-import type { FC } from 'react';
-import FlexLeftRightLayout from '@/layouts/FlexLeftRightLayout';
+import type { FC } from "react";
+import FlexLeftRightLayout from "@/layouts/FlexLeftRightLayout";
 
-import { useState } from 'react';
-import ProductCard from '@/components/ProductCard';
-import SearchCardCol from '@/components/SearchCard';
-import SliderCard from '@/components/SliderCard';
+import { useState } from "react";
+import ProductCard from "@/components/ProductCard";
+import SearchCardCol from "@/components/SearchCard";
+import SliderCard from "@/components/SliderCard";
+import type { Product } from "@/types/product";
 interface typeBanner {
-	src: string;
-	alt: string;
-	link: string;
+  src: string;
+  alt: string;
+  link: string;
 }
 [];
 interface typeProduct {
-	key: string;
-	name: string;
-	price: number;
-	sold: number;
-	image: string;
+  key: string;
+  name: string;
+  price: number;
+  sold: number;
+  image: string;
 }
-const ProductView: FC<{ slideBanners: any; productsLefts: any; productsRights: any }> = ({
-	slideBanners,
-	productsLefts,
-	productsRights,
-}) => {
-	const listslideBanner = slideBanners.map((slideBanner: any) => {
-		return {
-			src: slideBanner,
-			alt: 'banner',
-			link: '/product',
-		};
-	});
-	const listLeft = productsLefts.map((productsLeft: any, index: number) => (
-		<ProductCard
-			key={productsLeft}
-			name="Kẹo dẻo"
-			price={100000}
-			sold={300}
-			image={`https://source.unsplash.com/random/300x300?sig=${Math.random() * 100}`}
-			priority={index == 0 ? true : false}
-		/>
-	));
-	const listRight = productsRights.map((productsRight: any, index: number) => (
-		<ProductCard
-			key={productsRight}
-			name="Kẹo dẻo"
-			price={100000}
-			sold={300}
-			image={`https://source.unsplash.com/random/300x300?sig=${Math.random() * 100}`}
-			priority={index < 2 ? true : false}
-		/>
-	));
-	listLeft.unshift(<SliderCard key={30} banner={listslideBanner} />);
-	// prettier-ignore
-	listRight.splice(3, 0,<SearchCardCol key={31} keywords={["Quần Áo", "Đồ trẻ em", "Túi xách", "Quần jean", "Áo Thun", "Túi xách hình con thỏ", "Tai nghe bluetooth", "Điện thoại Iphone"]}/>)
+const ProductView: FC<{
+  slideBanners: any;
+  productsLefts: Product[];
+  productsRights: Product[];
+}> = ({ slideBanners, productsLefts, productsRights }) => {
+  const listslideBanner = slideBanners.map((slideBanner: any) => {
+    return {
+      src: slideBanner,
+      alt: "banner",
+      link: "/product",
+    };
+  });
+  const listLeft = productsLefts.map((product: Product, index: number) => (
+    <ProductCard
+      key={product.name}
+      name={product.name}
+      price={product.price}
+      sold={product.sold}
+      image={product.image}
+      unit={product.unit}
+      priority={index == 0 ? true : false}
+    />
+  ));
+  const listRight = productsRights.map((product: Product, index: number) => (
+    <ProductCard
+      key={product.name}
+      name={product.name}
+      price={product.price}
+      sold={product.sold}
+      image={product.image}
+      unit={product.unit}
+      priority={index < 2 ? true : false}
+    />
+  ));
+  listLeft.unshift(<SliderCard key={30} banner={listslideBanner} />);
+  // prettier-ignore
+  listRight.splice(3, 0,<SearchCardCol key={31} keywords={["Quần Áo", "Đồ trẻ em", "Túi xách", "Quần jean", "Áo Thun", "Túi xách hình con thỏ", "Tai nghe bluetooth", "Điện thoại Iphone"]}/>)
 
-	return (
-		<>
-			<FlexLeftRightLayout>
-				<div className="flex-1">{listLeft}</div>
-				<div className="flex-1">{listRight}</div>
-			</FlexLeftRightLayout>
-		</>
-	);
+  return (
+    <>
+      <FlexLeftRightLayout>
+        <div className="flex-1">{listLeft}</div>
+        <div className="flex-1">{listRight}</div>
+      </FlexLeftRightLayout>
+    </>
+  );
 };
 export default ProductView;

@@ -32,6 +32,17 @@ const GET = async ({
     return e;
   }
 };
+const GETOTHER = async ({ path }: { path: string }) => {
+  try {
+    const response = await fetch(path, {
+      method: "GET",
+    });
+    return await response.json();
+  } catch (e) {
+    console.log(e);
+    return e;
+  }
+};
 const POST = async ({ data }: { data: any }) => {
   const params = new URLSearchParams(data);
   const header = {
@@ -46,6 +57,7 @@ const POST = async ({ data }: { data: any }) => {
 };
 const API = {
   GET,
+  GETOTHER,
   POST,
 };
 export default API;
