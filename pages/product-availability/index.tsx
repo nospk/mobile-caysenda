@@ -7,7 +7,7 @@ import SearchBar from "@/components/SearchBar";
 import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
 const ProductAvailability: NextPage = () => {
-  let [select, setSelect] = useState<boolean>("true");
+  let [select, setSelect] = useState<boolean>(true);
   const productsLefts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const productsRights = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
   const listLeft = productsLefts.map((productsLeft) => (
