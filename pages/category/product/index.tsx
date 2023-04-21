@@ -7,7 +7,7 @@ import "swiper/css/thumbs";
 
 import SwiperCore, { Thumbs, Pagination } from "swiper";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import {
   AiOutlineLeft,
   AiOutlineRight,
@@ -20,38 +20,88 @@ import { useRouter } from "next/router";
 const ProductPage: NextPage = () => {
   const router = useRouter();
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore>();
+  const [scrollY, setscrollY] = useState<number>(0);
+
+  const handleNavigation = useCallback(
+    (e: any) => {
+      const window = e.currentTarget;
+      setscrollY(window.scrollY);
+      console.log(scrollY);
+    },
+    [scrollY]
+  );
+
+  useEffect(() => {
+    setscrollY(window.scrollY);
+    window.addEventListener("scroll", handleNavigation);
+
+    return () => {
+      window.removeEventListener("scroll", handleNavigation);
+    };
+  }, [handleNavigation]);
   return (
     <>
       <div>
         <div
-          onClick={() => router.back()}
-          className="absolute flex flex-col shrink-0 justify-center items-center z-10 w-[9.6vw] h-[9.6vw] top-[2.4vw] left-[2.4vw] bg-[rgba(0,0,0,0.3)] rounded-full text-white"
+          className={`flex sticky top-0 z-50 w-full ${
+            scrollY > 370
+              ? "h-[9vw] bg-white text-black"
+              : "h-[12vw] text-white"
+          }`}
         >
-          <AiOutlineLeft className="w-[5.33333vw] h-[5.33333vw] " />
+          <div
+            onClick={() => router.back()}
+            className={`absolute flex flex-col shrink-0 justify-center items-center   left-[2.4vw] rounded-full ${
+              scrollY > 370
+                ? "top-[0.5vw] w-[8vw] h-[8vw]"
+                : "top-[1.2vw] w-[9.6vw] h-[9.6vw] bg-[rgba(0,0,0,0.3)]"
+            }`}
+          >
+            <AiOutlineLeft className="w-[5vw] h-[5vw] " />
+          </div>
+          <div
+            onClick={() => router.push("/search")}
+            className={`absolute flex flex-col shrink-0 justify-center items-center  top-[1.2vw] right-[38.4vw] rounded-full ${
+              scrollY > 370
+                ? "top-[0.5vw] w-[8vw] h-[8vw]"
+                : "top-[1.2vw] w-[9.6vw] h-[9.6vw] bg-[rgba(0,0,0,0.3)]"
+            }`}
+          >
+            <AiOutlineSearch className="w-[5vw] h-[5vw] " />
+          </div>
+          <div
+            onClick={() => router.push("/cart")}
+            className={`absolute flex flex-col shrink-0 justify-center items-center  top-[1.2vw] right-[26.4vw] rounded-full ${
+              scrollY > 370
+                ? "top-[0.5vw] w-[8vw] h-[8vw]"
+                : "top-[1.2vw] w-[9.6vw] h-[9.6vw] bg-[rgba(0,0,0,0.3)]"
+            }`}
+          >
+            <AiOutlineShoppingCart className="w-[5vw] h-[5vw] " />
+          </div>
+          <div
+            className={`absolute flex flex-col shrink-0 justify-center items-center  top-[1.2vw] right-[14.4vw] rounded-full ${
+              scrollY > 370
+                ? "top-[0.5vw] w-[8vw] h-[8vw]"
+                : "top-[1.2vw] w-[9.6vw] h-[9.6vw] bg-[rgba(0,0,0,0.3)]"
+            }`}
+          >
+            <AiOutlineShareAlt className="w-[5vw] h-[5vw] " />
+          </div>
+          <div
+            onClick={() => router.push("/")}
+            className={`absolute flex flex-col shrink-0 justify-center items-center  top-[1.2vw] right-[2.4vw] rounded-full ${
+              scrollY > 370
+                ? "top-[0.5vw] w-[8vw] h-[8vw]"
+                : "top-[1.2vw] w-[9.6vw] h-[9.6vw] bg-[rgba(0,0,0,0.3)]"
+            }`}
+          >
+            <AiOutlineHome className="w-[5vw] h-[5vw] " />
+          </div>
         </div>
-        <div
-          onClick={() => router.push("/search")}
-          className="absolute flex flex-col shrink-0 justify-center items-center z-10 w-[9.6vw] h-[9.6vw] top-[2.4vw] right-[38.4vw] bg-[rgba(0,0,0,0.3)] rounded-full text-white"
-        >
-          <AiOutlineSearch className="w-[5.33333vw] h-[5.33333vw] " />
-        </div>
-        <div
-          onClick={() => router.push("/cart")}
-          className="absolute flex flex-col shrink-0 justify-center items-center z-10 w-[9.6vw] h-[9.6vw] top-[2.4vw] right-[26.4vw] bg-[rgba(0,0,0,0.3)] rounded-full text-white"
-        >
-          <AiOutlineShoppingCart className="w-[5.33333vw] h-[5.33333vw] " />
-        </div>
-        <div className="absolute flex flex-col shrink-0 justify-center items-center z-10 w-[9.6vw] h-[9.6vw] top-[2.4vw] right-[14.4vw] bg-[rgba(0,0,0,0.3)] rounded-full text-white">
-          <AiOutlineShareAlt className="w-[5.33333vw] h-[5.33333vw] " />
-        </div>
-        <div
-          onClick={() => router.push("/")}
-          className="absolute flex flex-col shrink-0 justify-center items-center z-10 w-[9.6vw] h-[9.6vw] top-[2.4vw] right-[2.4vw] bg-[rgba(0,0,0,0.3)] rounded-full text-white"
-        >
-          <AiOutlineHome className="w-[5.33333vw] h-[5.33333vw] " />
-        </div>
+
         <Swiper
-          className="w-[100vw] h-[100vw] rounded-xl"
+          className="block w-[100vw] h-[100vw] rounded-xl mt-[-12vw]"
           spaceBetween={10}
           slidesPerView={1}
           grabCursor={true}
@@ -262,6 +312,14 @@ const ProductPage: NextPage = () => {
             <AiOutlineRight className="text-[4.2667vw] text-[#999999]" />
           </div>
         </div>
+      </div>
+      <div>
+        a <br></br>a <br></br>a <br></br>a <br></br>a <br></br>a <br></br>a
+        <br></br>a <br></br>a <br></br>a <br></br>a <br></br>a <br></br>a{" "}
+        <br></br>a <br></br>a <br></br>a<br></br>a <br></br>a <br></br>a{" "}
+        <br></br>a <br></br>a <br></br>a <br></br>a <br></br>a <br></br>a
+        <br></br>a <br></br>a <br></br>a <br></br>a <br></br>a <br></br>a{" "}
+        <br></br>a <br></br>a <br></br>a<br></br>a <br></br>a <br></br>
       </div>
     </>
   );
