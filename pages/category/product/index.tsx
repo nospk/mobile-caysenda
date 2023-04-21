@@ -10,6 +10,7 @@ import Image from "next/image";
 import { useState } from "react";
 import {
   AiOutlineLeft,
+  AiOutlineRight,
   AiOutlineSearch,
   AiOutlineShoppingCart,
   AiOutlineShareAlt,
@@ -50,7 +51,7 @@ const ProductPage: NextPage = () => {
           <AiOutlineHome className="w-[5.33333vw] h-[5.33333vw] " />
         </div>
         <Swiper
-          className="w-[100vw] h-[100vw]"
+          className="w-[100vw] h-[100vw] rounded-xl"
           spaceBetween={10}
           slidesPerView={1}
           grabCursor={true}
@@ -154,12 +155,12 @@ const ProductPage: NextPage = () => {
             />
           </SwiperSlide>
         </Swiper>
-        <div className="p-2 bg-white">
+        <div className="py-[2.4vw] bg-white flex">
           <Swiper
-            className="w-full bg-white"
+            className="flex-1 w-full bg-white"
             loop={false}
-            spaceBetween={5}
-            slidesPerView={5}
+            spaceBetween={2}
+            slidesPerView={7}
             watchSlidesProgress
             touchRatio={2}
             slideToClickedSlide={true}
@@ -168,6 +169,7 @@ const ProductPage: NextPage = () => {
           >
             <SwiperSlide>
               <Image
+                className="rounded-xl w-[11.7333vw] h-[11.7333vw]"
                 src="https://caysenda.vn/resources/upload/17892854272_102253868.jpg"
                 alt=""
                 width={500}
@@ -176,6 +178,7 @@ const ProductPage: NextPage = () => {
             </SwiperSlide>
             <SwiperSlide>
               <Image
+                className="rounded-xl w-[11.7333vw] h-[11.7333vw]"
                 src="https://caysenda.vn/resources/upload/17892863213_102253868.jpg"
                 alt=""
                 width={500}
@@ -184,6 +187,7 @@ const ProductPage: NextPage = () => {
             </SwiperSlide>
             <SwiperSlide>
               <Image
+                className="rounded-xl w-[11.7333vw] h-[11.7333vw]"
                 src="https://caysenda.vn/resources/upload/17892872215_102253868.jpg"
                 alt=""
                 width={500}
@@ -192,6 +196,7 @@ const ProductPage: NextPage = () => {
             </SwiperSlide>
             <SwiperSlide>
               <Image
+                className="rounded-xl w-[11.7333vw] h-[11.7333vw]"
                 src="https://caysenda.vn/resources/upload/17892872215_102253868.jpg"
                 alt=""
                 width={500}
@@ -200,6 +205,7 @@ const ProductPage: NextPage = () => {
             </SwiperSlide>
             <SwiperSlide>
               <Image
+                className="rounded-xl w-[11.7333vw] h-[11.7333vw]"
                 src="https://caysenda.vn/resources/upload/17892872215_102253868.jpg"
                 alt=""
                 width={500}
@@ -208,6 +214,7 @@ const ProductPage: NextPage = () => {
             </SwiperSlide>
             <SwiperSlide>
               <Image
+                className="rounded-xl w-[11.7333vw] h-[11.7333vw]"
                 src="https://caysenda.vn/resources/upload/17892872215_102253868.jpg"
                 alt=""
                 width={500}
@@ -216,6 +223,7 @@ const ProductPage: NextPage = () => {
             </SwiperSlide>
             <SwiperSlide>
               <Image
+                className="rounded-xl w-[11.7333vw] h-[11.7333vw]"
                 src="https://caysenda.vn/resources/upload/17892872215_102253868.jpg"
                 alt=""
                 width={500}
@@ -224,6 +232,7 @@ const ProductPage: NextPage = () => {
             </SwiperSlide>
             <SwiperSlide>
               <Image
+                className="rounded-xl w-[11.7333vw] h-[11.7333vw]"
                 src="https://caysenda.vn/resources/upload/17892872215_102253868.jpg"
                 alt=""
                 width={500}
@@ -232,6 +241,7 @@ const ProductPage: NextPage = () => {
             </SwiperSlide>
             <SwiperSlide>
               <Image
+                className="rounded-xl w-[11.7333vw] h-[11.7333vw]"
                 src="https://caysenda.vn/resources/upload/17892872215_102253868.jpg"
                 alt=""
                 width={500}
@@ -240,6 +250,7 @@ const ProductPage: NextPage = () => {
             </SwiperSlide>
             <SwiperSlide>
               <Image
+                className="rounded-xl w-[11.7333vw] h-[11.7333vw]"
                 src="https://caysenda.vn/resources/upload/17892872215_102253868.jpg"
                 alt=""
                 width={500}
@@ -247,6 +258,9 @@ const ProductPage: NextPage = () => {
               />
             </SwiperSlide>
           </Swiper>
+          <div className="flex bg-white flex-row justify-center items-center w-[9.33333vw] h-[11.73333vw] mt-[-0.4vw] top-[2.66667vw] left-[90.66667vw] z-10">
+            <AiOutlineRight className="text-[4.2667vw] text-[#999999]" />
+          </div>
         </div>
       </div>
     </>
