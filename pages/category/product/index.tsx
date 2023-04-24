@@ -20,19 +20,19 @@ import { useRouter } from "next/router";
 const ProductPage: NextPage = () => {
   const router = useRouter();
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore>();
-  const [scrollY, setscrollY] = useState<number>(0);
-
-  const handleNavigation = useCallback(
-    (e: any) => {
-      const window = e.currentTarget;
-      setscrollY(window.scrollY);
-      console.log(scrollY);
-    },
-    [scrollY]
-  );
+  const [change, setChange] = useState<boolean>(false);
+  const handleNavigation = useCallback((e: any) => {
+    const window = e.currentTarget;
+    console.log(window.scrollY);
+    if (window.scrollY > 300) {
+      setChange(true);
+    }
+    if (window.scrollY < 150) {
+      setChange(false);
+    }
+  }, []);
 
   useEffect(() => {
-    setscrollY(window.scrollY);
     window.addEventListener("scroll", handleNavigation);
 
     return () => {
@@ -44,15 +44,13 @@ const ProductPage: NextPage = () => {
       <div>
         <div
           className={`flex sticky top-0 z-50 w-full ${
-            scrollY > 370
-              ? "h-[9vw] bg-white text-black"
-              : "h-[12vw] text-white"
+            change ? "h-[9vw] bg-white text-black" : "h-[12vw] text-white"
           }`}
         >
           <div
             onClick={() => router.back()}
             className={`absolute flex flex-col shrink-0 justify-center items-center   left-[2.4vw] rounded-full ${
-              scrollY > 370
+              change
                 ? "top-[0.5vw] w-[8vw] h-[8vw]"
                 : "top-[1.2vw] w-[9.6vw] h-[9.6vw] bg-[rgba(0,0,0,0.3)]"
             }`}
@@ -62,7 +60,7 @@ const ProductPage: NextPage = () => {
           <div
             onClick={() => router.push("/search")}
             className={`absolute flex flex-col shrink-0 justify-center items-center  top-[1.2vw] right-[38.4vw] rounded-full ${
-              scrollY > 370
+              change
                 ? "top-[0.5vw] w-[8vw] h-[8vw]"
                 : "top-[1.2vw] w-[9.6vw] h-[9.6vw] bg-[rgba(0,0,0,0.3)]"
             }`}
@@ -72,7 +70,7 @@ const ProductPage: NextPage = () => {
           <div
             onClick={() => router.push("/cart")}
             className={`absolute flex flex-col shrink-0 justify-center items-center  top-[1.2vw] right-[26.4vw] rounded-full ${
-              scrollY > 370
+              change
                 ? "top-[0.5vw] w-[8vw] h-[8vw]"
                 : "top-[1.2vw] w-[9.6vw] h-[9.6vw] bg-[rgba(0,0,0,0.3)]"
             }`}
@@ -81,7 +79,7 @@ const ProductPage: NextPage = () => {
           </div>
           <div
             className={`absolute flex flex-col shrink-0 justify-center items-center  top-[1.2vw] right-[14.4vw] rounded-full ${
-              scrollY > 370
+              change
                 ? "top-[0.5vw] w-[8vw] h-[8vw]"
                 : "top-[1.2vw] w-[9.6vw] h-[9.6vw] bg-[rgba(0,0,0,0.3)]"
             }`}
@@ -91,7 +89,7 @@ const ProductPage: NextPage = () => {
           <div
             onClick={() => router.push("/")}
             className={`absolute flex flex-col shrink-0 justify-center items-center  top-[1.2vw] right-[2.4vw] rounded-full ${
-              scrollY > 370
+              change
                 ? "top-[0.5vw] w-[8vw] h-[8vw]"
                 : "top-[1.2vw] w-[9.6vw] h-[9.6vw] bg-[rgba(0,0,0,0.3)]"
             }`}
