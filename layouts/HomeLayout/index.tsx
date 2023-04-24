@@ -1,14 +1,13 @@
-import Footer from '@/components/Footer';
-import type { ReactNode } from 'react';
+import Footer from "@/components/Footer";
+import type { ReactNode } from "react";
 
 const HomeLayout = ({ children }: { children: ReactNode }) => {
-	return (
-		<>
-			{children}
-
-			<Footer />
-		</>
-	);
+  return (
+    <>
+      <section className="mb-14">{children}</section>
+      <Footer />
+    </>
+  );
 };
 
 export default HomeLayout;
