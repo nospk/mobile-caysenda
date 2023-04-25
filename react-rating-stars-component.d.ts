@@ -9,7 +9,7 @@ interface StarRatingComponentProps {
 
   /** number of icons in rating, default `5` */
   starCount?: number | undefined;
-
+  
   onStarClick?:
     | ((nextValue: number, prevValue: number, name: string) => void)
     | undefined;
