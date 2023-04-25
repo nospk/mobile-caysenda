@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import ReactStars from "react-rating-stars-component";
+import Rating from "@/components/Rating";
 import "swiper/css";
 import "swiper/css/thumbs";
 
@@ -384,15 +384,13 @@ const ProductPage: NextPage = () => {
           </div>
           <div className="flex flex-row justify-self-start box-border content-start mt-[0.8vw]">
             <div className="flex relative font-bold box-border content-start shrink-0">
-              <ReactStars
-                name="product star"
-                starCount={5}
-                editing={false}
+              <Rating
+                count={5}
+                edit={false}
                 value={4}
-                starColor="#ffd700"
               />
             </div>
-            <div className="flex-1 box-border grow content-start shrink-0">
+            <div className="flex justify-end box-border grow content-start shrink-0">
               <span className="text-[3.2vw] box-border text-[#999999] block relative text-right">
                 Đã bán: 64 Cái
               </span>

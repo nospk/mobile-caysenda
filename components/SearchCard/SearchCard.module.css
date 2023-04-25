@@ -19,5 +19,5 @@
 }
 
 .search_text {
-	@apply flex-1 text-lg relative w-full outline-none whitespace-pre-wrap bg-white text-[#606060];
+	@apply flex-1 text-lg relative w-full outline-none bg-white text-[#606060] truncate;
 }
