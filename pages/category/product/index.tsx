@@ -385,11 +385,11 @@ const ProductPage: NextPage = () => {
           <div className="flex flex-row justify-self-start box-border content-start mt-[0.8vw]">
             <div className="flex relative font-bold box-border content-start shrink-0">
               <ReactStars
-                count={5}
-                edit={false}
+                name="product star"
+                starCount={5}
+                editing={false}
                 value={4}
-                size={24}
-                activeColor="#ffd700"
+                starColor="#ffd700"
               />
             </div>
             <div className="flex-1 box-border grow content-start shrink-0">
