@@ -385,6 +385,7 @@ const ProductPage: NextPage = () => {
           <div className="flex flex-row justify-self-start box-border content-start mt-[0.8vw]">
             <div className="flex relative font-bold box-border content-start shrink-0">
               <Rating
+                className="flex flex-row box-broder shrink-0"
                 count={5}
                 edit={false}
                 value={4}
